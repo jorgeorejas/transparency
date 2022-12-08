@@ -5,6 +5,8 @@ export default function MarketingLayout({
 }: {
     children: React.ReactNode;
 }) {
+    // on page load
+
     return (
         <>
             <Header sticky={true} />

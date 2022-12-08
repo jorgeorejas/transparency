@@ -1,7 +1,9 @@
+'use client';
 import { Logo } from '@design-system/atoms/Logo';
 import { Button } from '@design-system/molecules/Button';
 import cn from 'classnames';
 import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export type HeaderProps = {
     className?: string;
@@ -28,7 +30,7 @@ const Header = ({ className, sticky = false }: HeaderProps) => {
                 <Link href={'/'}>Menu 3</Link>
             </div>
             <div className='flex items-center justify-center gap-4 shrink-0'>
-                <Button>Sign in</Button>
+                <Button onClick={() => signIn()}>Sign in</Button>
             </div>
         </div>
     );

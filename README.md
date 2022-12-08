@@ -10,7 +10,6 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 
 -   [x] Using the `/app` directory
 -   [x] Storybook
--   [ ] Dark Mode using **TailwindCSS**
 -   [ ] UI Components Library (**Radix UI** + **Tremor** )
 -   [ ] Database ORM using **Prisma**
 -   [ ] Authentication using **NextAuth**
@@ -30,6 +29,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 -   [ ] Self Hosted or Third Party Email
 -   [ ] Email Templates powered by **MDX** and **Editor.js**
 -   [ ] Self Hosted or Third Party Database (PostgreSQL)
+-   [ ] Dark Mode using **TailwindCSS**
 
 ## Running Locally
 

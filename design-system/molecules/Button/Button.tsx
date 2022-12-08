@@ -25,8 +25,4 @@ const Button = ({ children, className, ...props }: BasicProps) => {
     );
 };
 
-export type ButtonLink = BasicProps & {
-    routeLink: string;
-};
-
 export default Button;
