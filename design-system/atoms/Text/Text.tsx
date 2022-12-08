@@ -12,12 +12,8 @@ export type AllowedTags =
     | HeaderAllowedTags;
 
 type BaseProps = {
-    children: React.ReactNode;
-    inline?: boolean;
-    itemProp?: string; // Microdata
-    stroked?: boolean;
+    children: any;
     className?: string;
-    htmlTag?: AllowedTags;
 };
 
 export type TextProps = BaseProps & {
@@ -25,14 +21,17 @@ export type TextProps = BaseProps & {
 };
 
 const Text = ({ children, className, htmlTag = 'p' }: TextProps) => {
-    return createElement(htmlTag, {
-        className: cn('font-sans', 'max-w-full', className),
-        children,
-    });
+    return createElement(
+        htmlTag,
+        {
+            className: cn('font-sans', 'max-w-full', className),
+        },
+        children
+    );
 };
 
 type TextHeaderProps = BaseProps & {
-    htmlTag?: HeaderAllowedTags;
+    htmlTag: HeaderAllowedTags;
 };
 
 Text.Header = function Header({
