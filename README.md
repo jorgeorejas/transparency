@@ -9,7 +9,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 ## Features
 
 -   [x] Using the `/app` directory
--   [ ] Storybook
+-   [x] Storybook
 -   [ ] UI Components Library
 -   [ ] Database ORM using **Prisma**
 -   [ ] Authentication using **NextAuth**
