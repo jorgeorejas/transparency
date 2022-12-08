@@ -1,10 +1,8 @@
-import { signIn } from 'next-auth/react';
+import { logger } from '@lib/logger';
+import prisma from '@lib/prismadb';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import NextAuth from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
-import prisma from '@lib/prismadb';
-import { logger } from '@lib/logger';
 export const authOptions = {
     // Configure one or more authentication providers
     providers: [
@@ -24,6 +22,17 @@ export const authOptions = {
         },
         debug: (code: any, metadata: any) => {
             logger.debug(code, metadata);
+        },
+    },
+    session: {
+        strategy: 'database',
+        maxAge: 30 * 24 * 60 * 60, // 30 days
+        updateAge: 24 * 60 * 60, // 24 hours
+    },
+    callbacks: {
+        async session({ session, token, user }: any) {
+            session.user = user;
+            return session;
         },
     },
 };

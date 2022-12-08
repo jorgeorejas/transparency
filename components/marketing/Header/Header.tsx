@@ -4,12 +4,14 @@ import { Button } from '@design-system/molecules/Button';
 import cn from 'classnames';
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { Text } from '@design-system/atoms';
 
 export type HeaderProps = {
     className?: string;
     sticky?: boolean;
 };
 const Header = ({ className, sticky = false }: HeaderProps) => {
+    const { data } = useSession();
     const style = cn(
         'bg-white border-b max-w-[90vw] mx-auto',
         'top-0 z-50 py-2 px-2',
@@ -30,7 +32,14 @@ const Header = ({ className, sticky = false }: HeaderProps) => {
                 <Link href={'/'}>Menu 3</Link>
             </div>
             <div className='flex items-center justify-center gap-4 shrink-0'>
-                <Button onClick={() => signIn()}>Sign in</Button>
+                {data?.user ? (
+                    <>
+                        <Text>{data.user.name}</Text>
+                        <Button onClick={() => signOut()}>Sign out</Button>
+                    </>
+                ) : (
+                    <Button onClick={() => signIn()}>Sign in</Button>
+                )}
             </div>
         </div>
     );
