@@ -10,6 +10,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 
 -   [x] Using the `/app` directory
 -   [x] Storybook
+-   [ ] Dark Mode using **TailwindCSS**
 -   [ ] UI Components Library (**Radix UI** + **Tremor** )
 -   [ ] Database ORM using **Prisma**
 -   [ ] Authentication using **NextAuth**
@@ -24,7 +25,6 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 -   [ ] Docker Ready for Production
 -   [ ] Responsive Design using **TailwindCSS**
 -   [ ] Testing tools
--   [ ] Dark Mode using **TailwindCSS**
 -   [ ] Vercel OG Image for Social Media
 -   [ ] Self Hosted Analytics based on **Umami**
 -   [ ] Self Hosted or Third Party Email

@@ -13,9 +13,9 @@ export default {
     },
     decorators: [
         (Story) => (
-            <div className='p-2 rounded-lg shadow max-w-1/2'>
+            <Card>
                 <Story />
-            </div>
+            </Card>
         ),
     ],
 } as ComponentMeta<typeof Text>;

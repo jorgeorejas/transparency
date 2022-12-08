@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Icon } from './Icon';
+import { Card } from '@design-system/molecules/Card';
 
 export default {
     title: 'Design System/Atoms/Icon',
@@ -13,21 +14,18 @@ export default {
     },
     decorators: [
         (Story) => (
-            <div className='p-2 rounded-lg shadow max-w-1/2'>
+            <Card>
                 <Story />
-            </div>
+            </Card>
         ),
     ],
 } as ComponentMeta<typeof Icon>;
 
-const Template: ComponentStory<typeof Icon> = (args) => (
-    <div className='w-64 h-64'>
-        <Icon {...args} />
-    </div>
-);
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
 export const DefaultIcon = Template.bind({});
 
 DefaultIcon.args = {
-    name: 'AcademicCapIcon',
+    name: 'CubeTransparentIcon',
+    className: 'w-64 h-64',
 };
