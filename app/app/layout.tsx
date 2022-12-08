@@ -1,24 +1,21 @@
-'use client';
-import { SessionProvider, useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { getCurrentUser } from '@lib/session';
+import { redirect } from 'next/navigation';
 
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const router = useRouter();
-    const { data } = useSession();
+    const user = getCurrentUser();
     // Only allow authenticated users to access this page
-    if (!data) {
-        router.push('/');
+    if (!user) {
+        redirect('/');
     }
     return (
         <html>
             <head />
-            <SessionProvider>
-                <body>{children}</body>
-            </SessionProvider>
+
+            <body>{children}</body>
         </html>
     );
 }

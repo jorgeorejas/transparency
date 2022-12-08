@@ -1,9 +1,11 @@
 import { logger } from '@lib/logger';
 import prisma from '@lib/prismadb';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { NextAuthOptionsProps } from '../../../types/next-auth';
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
-export const authOptions = {
+
+export const authOptions: NextAuthOptionsProps = {
     // Configure one or more authentication providers
     providers: [
         GithubProvider({

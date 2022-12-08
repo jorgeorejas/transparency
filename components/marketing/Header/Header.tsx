@@ -1,17 +1,18 @@
-'use client';
+import { Text } from '@design-system/atoms';
 import { Logo } from '@design-system/atoms/Logo';
-import { Button } from '@design-system/molecules/Button';
+import { getCurrentUser } from '@lib/session';
+import { User } from '@prisma/client';
 import cn from 'classnames';
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { Text } from '@design-system/atoms';
-
 export type HeaderProps = {
     className?: string;
     sticky?: boolean;
+    user: any;
 };
-const Header = ({ className, sticky = false }: HeaderProps) => {
-    const { data } = useSession();
+
+// promise react element
+
+const Header = ({ className, user, sticky = false }: HeaderProps) => {
     const style = cn(
         'bg-white border-b max-w-[90vw] mx-auto',
         'top-0 z-50 py-2 px-2',
@@ -32,17 +33,26 @@ const Header = ({ className, sticky = false }: HeaderProps) => {
                 <Link href={'/'}>Menu 3</Link>
             </div>
             <div className='flex items-center justify-center gap-4 shrink-0'>
-                {data?.user ? (
+                {user ? (
                     <>
-                        <Text>{data.user.name}</Text>
-                        <Button onClick={() => signOut()}>Sign out</Button>
+                        <Text>{user.name}</Text>
+                        <Link
+                            href='/logout'
+                            className='relative inline-flex items-center h-8 px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2'
+                        >
+                            Login
+                        </Link>
                     </>
                 ) : (
-                    <Button onClick={() => signIn()}>Sign in</Button>
+                    <Link
+                        href='/login'
+                        className='relative inline-flex items-center h-8 px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2'
+                    >
+                        Login
+                    </Link>
                 )}
             </div>
         </div>
     );
 };
-
 export default Header;

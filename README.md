@@ -10,15 +10,15 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 
 -   [x] Using the `/app` directory
 -   [x] Storybook
+-   [x] Authentication using **NextAuth**
+-   [x] Database ORM using **Prisma**
+-   [ ] Documentation and Blog powered by **MDX** and **Editor.js**
 -   [ ] UI Components Library (**Radix UI** + **Tremor** )
--   [ ] Database ORM using **Prisma**
--   [ ] Authentication using **NextAuth**
 -   [ ] User management and roles using **NextAuth**
 -   [ ] Payments and Subscriptions using **Stripe**
 -   [ ] Custom domain & multi-tenancy
 -   [ ] Loading UI
 -   [ ] API Routes and Middlewares
--   [ ] Documentation and Blog powered by **MDX** and **Editor.js**
 -   [ ] Blog SEO to improve search engine ranking and Inbound Marketing
 -   [ ] Dashboard with Business Metrics
 -   [ ] Docker Ready for Production

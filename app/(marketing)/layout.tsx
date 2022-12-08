@@ -1,20 +1,18 @@
-'use client';
-
 import { Header } from '@components/marketing/Header';
-import { useSession } from 'next-auth/react';
+import { getCurrentUser } from '@lib/session';
 
-export default function MarketingLayout({
+export default async function MarketingLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
     // on page load
-    const session = useSession();
+    const user = await getCurrentUser();
     return (
         <>
-            <Header sticky={true} />
+            <Header user={user} sticky={true} />
             <div className='max-w-[90vw] mx-auto'>{children}</div>
-            <pre>{session && JSON.stringify(session, null, 2)}</pre>
+            <pre>{JSON.stringify(user, null, 2)}</pre>
         </>
     );
 }
