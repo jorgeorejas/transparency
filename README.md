@@ -10,12 +10,12 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 
 -   [x] Using the `/app` directory
 -   [x] Storybook
--   [ ] UI Components Library
+-   [ ] UI Components Library (**Radix UI** + **Tremor** )
 -   [ ] Database ORM using **Prisma**
 -   [ ] Authentication using **NextAuth**
 -   [ ] User management and roles using **NextAuth**
 -   [ ] Payments and Subscriptions using **Stripe**
--   [ ] Custom domain
+-   [ ] Custom domain & multi-tenancy
 -   [ ] Loading UI
 -   [ ] API Routes and Middlewares
 -   [ ] Documentation and Blog powered by **MDX** and **Editor.js**
@@ -28,7 +28,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 -   [ ] Vercel OG Image for Social Media
 -   [ ] Self Hosted Analytics based on **Umami**
 -   [ ] Self Hosted or Third Party Email
--   [ ] Email templates powered by **MDX** and **Editor.js**
+-   [ ] Email Templates powered by **MDX** and **Editor.js**
 -   [ ] Self Hosted or Third Party Database (PostgreSQL)
 
 ## Running Locally
