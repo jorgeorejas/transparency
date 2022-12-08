@@ -30,3 +30,29 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 -   [ ] Self Hosted or Third Party Email
 -   [ ] Email templates powered by **MDX** and **Editor.js**
 -   [ ] Self Hosted or Third Party Database (PostgreSQL)
+
+## Running Locally
+
+Make sure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed.
+
+```sh
+brew install node yarn
+```
+
+1. Install dependencies
+
+```sh
+yarn
+```
+
+2. Copy the `.env.example` file to `.env.local` and fill in the values.
+
+```sh
+cp .env.example .env.local
+```
+
+3. Run the development server:
+
+```sh
+yarn dev
+```
