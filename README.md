@@ -30,6 +30,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 -   [ ] Email Templates powered by **MDX** and **Editor.js**
 -   [ ] Self Hosted or Third Party Database (PostgreSQL)
 -   [ ] Dark Mode using **TailwindCSS**
+-   [ ] Invoice Generation using **PDFKit**
 
 ## Running Locally
 
