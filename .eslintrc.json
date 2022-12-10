@@ -1,3 +1,7 @@
 {
-    "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:editorconfig/all", "prettier"],
+  "rules": {
+    "@next/next/no-head-element": "off"
+  },
+  "plugins": ["editorconfig"]
 }

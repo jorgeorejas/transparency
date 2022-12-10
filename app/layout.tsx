@@ -1,15 +1,18 @@
-import { SessionProvider } from 'next-auth/react';
-import '../styles/globals.css';
+import { SessionProvider } from "next-auth/react"
+import { useLiveReload } from "next-contentlayer/hooks"
+import "@styles/globals.css"
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode
 }) {
-    return (
-        <html>
-            <head />
-            <body>{children}</body>
-        </html>
-    );
+  useLiveReload()
+
+  return (
+    <html>
+      <head />
+      <body>{children}</body>
+    </html>
+  )
 }

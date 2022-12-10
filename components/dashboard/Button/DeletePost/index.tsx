@@ -1,1 +1,1 @@
-export { PostDeleteButton } from './DeletePost';
+export { PostDeleteButton } from "./DeletePost"

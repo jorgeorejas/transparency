@@ -8,29 +8,30 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 
 ## Features
 
--   [x] Using the `/app` directory
--   [x] Storybook
--   [x] Authentication using **NextAuth**
--   [x] Database ORM using **Prisma**
--   [ ] Documentation and Blog powered by **MDX** and **Editor.js**
--   [ ] UI Components Library (**Radix UI** + **Tremor** )
--   [ ] User management and roles using **NextAuth**
--   [ ] Payments and Subscriptions using **Stripe**
--   [ ] Custom domain & multi-tenancy
--   [ ] Loading UI
--   [ ] API Routes and Middlewares
--   [ ] Blog SEO to improve search engine ranking and Inbound Marketing
--   [ ] Dashboard with Business Metrics
--   [ ] Docker Ready for Production
--   [ ] Responsive Design using **TailwindCSS**
--   [ ] Testing tools
--   [ ] Vercel OG Image for Social Media
--   [ ] Self Hosted Analytics based on **Umami**
--   [ ] Self Hosted or Third Party Email
--   [ ] Email Templates powered by **MDX** and **Editor.js**
--   [ ] Self Hosted or Third Party Database (PostgreSQL)
--   [ ] Dark Mode using **TailwindCSS**
--   [ ] Invoice Generation using **PDFKit**
+- [x] Using the `/app` directory
+- [x] Storybook
+- [x] Authentication using **NextAuth**
+- [x] Database ORM using **Prisma**
+- [x] Documentation and Blog Editor powered by **MDX** and **Editor.js**
+- [ ] Blog
+- [ ] UI Components Library (**Radix UI** + **Tremor** )
+- [ ] User management and roles using **NextAuth**
+- [ ] Payments and Subscriptions using **Stripe**
+- [ ] Custom domain & multi-tenancy
+- [ ] Loading UI
+- [ ] API Routes and Middlewares
+- [ ] Blog SEO to improve search engine ranking and Inbound Marketing
+- [ ] Dashboard with Business Metrics
+- [ ] Docker Ready for Production
+- [ ] Responsive Design using **TailwindCSS**
+- [ ] Testing tools
+- [ ] Vercel OG Image for Social Media
+- [ ] Self Hosted Analytics based on **Umami**
+- [ ] Self Hosted or Third Party Email
+- [ ] Email Templates powered by **MDX** and **Editor.js**
+- [ ] Self Hosted or Third Party Database (PostgreSQL)
+- [ ] Dark Mode using **TailwindCSS**
+- [ ] Invoice Generation using **PDFKit**
 
 ## Running Locally
 

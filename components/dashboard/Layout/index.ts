@@ -1,2 +1,2 @@
-export { DashboardShell } from './Shell';
-export { DashboardHeader } from './Header';
+export { DashboardHeader } from "./Header";
+export { DashboardContainer } from "./Container";
