@@ -1,6 +1,6 @@
 import cn from "classnames"
 import React, { createElement } from "react"
-
+import Link from "next/link"
 export type HeaderAllowedTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
 
 export type AllowedTags =
@@ -51,6 +51,23 @@ Text.Normal = function Normal({ children, className }: BaseProps) {
     <Text htmlTag="p" className={className}>
       {children}
     </Text>
+  )
+}
+type TextLinkProps = BaseProps & {
+  href: string
+  target?: string
+}
+
+Text.Link = function Link({
+  children,
+  href,
+  target,
+  className,
+}: TextLinkProps) {
+  return (
+    <Link href={href} target={target} className={className}>
+      {children}
+    </Link>
   )
 }
 

@@ -1,7 +1,9 @@
+import { pageInfo } from "config/page"
+
 export default function Head() {
   return (
     <>
-      <title>My Saas</title>
+      <title>{pageInfo.title}</title>
     </>
   )
 }

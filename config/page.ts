@@ -1,7 +1,7 @@
 import * as Outline from "@heroicons/react/24/outline"
 
 export const pageInfo: PageInfoProps = {
-  title: "Transparecy",
+  title: "Transparency",
   description:
     "Transparency is a web app framework who saves that 80% of time you spend not coding features.",
   icon: "CubeTransparentIcon",

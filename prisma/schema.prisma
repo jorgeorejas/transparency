@@ -55,14 +55,17 @@ model VerificationToken {
 }
 
 model posts {
-  id         String   @id @default(cuid())
-  title      String
-  content    Json?
-  published  Boolean  @default(false)
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now())
-  authorId   String
-  user       User     @relation(fields: [authorId], references: [id])
+  id          String   @id @default(cuid())
+  title       String
+  content     Json?
+  published   Boolean  @default(false)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now())
+  authorId    String
+  description String?
+  slug        String   @unique @default("")
+  image       String   @default("https://picsum.photos/seed/hr/1800/600")
+  user        User     @relation(fields: [authorId], references: [id])
 }
 
 enum userType {

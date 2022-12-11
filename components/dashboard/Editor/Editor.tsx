@@ -50,7 +50,14 @@ export function Editor({ post }: EditorProps) {
         inlineToolbar: true,
         data: body.content,
         tools: {
-          header: Header,
+          header: {
+            class: Header,
+            config: {
+              placeholder: "Header",
+              levels: [1, 2, 3, 4],
+              defaultLevel: 2,
+            },
+          },
           linkTool: LinkTool,
           list: List,
           code: Code,
