@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import EditorJS from "@editorjs/editorjs"
-import { Post } from "@prisma/client"
+import { posts } from "@prisma/client"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
 import TextareaAutosize from "react-textarea-autosize"
@@ -14,7 +14,7 @@ import { postPatchSchema } from "@lib/validations/post"
 import { ToastMessage, Icon } from "@design-system/atoms"
 
 interface EditorProps {
-  post: Pick<Post, "id" | "title" | "content" | "published">
+  post: Pick<posts, "id" | "title" | "content" | "published">
 }
 
 type FormData = z.infer<typeof postPatchSchema>

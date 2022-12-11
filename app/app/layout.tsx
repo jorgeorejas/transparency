@@ -7,6 +7,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const user = getCurrentUser()
+
   // Only allow authenticated users to access this page
   if (!user) {
     redirect("/")
@@ -14,7 +15,6 @@ export default function RootLayout({
   return (
     <html>
       <head />
-
       <body>{children}</body>
     </html>
   )

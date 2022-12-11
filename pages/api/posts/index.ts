@@ -23,12 +23,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === "GET") {
     try {
-      const posts = await prisma.post.findMany({
+      const posts = await prisma.posts.findMany({
         select: {
           id: true,
           title: true,
           published: true,
-          createdAt: true,
+          created_at: true,
         },
         where: {
           authorId: user.id,
@@ -45,7 +45,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       const body = postCreateSchema.parse(req.body)
 
-      const post = await prisma.post.create({
+      const post = await prisma.posts.create({
         data: {
           title: body.title,
           content: body.content,

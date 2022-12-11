@@ -16,9 +16,9 @@ export type HeaderProps = {
 
 const Header = ({ className, user, children, sticky = false }: HeaderProps) => {
   const style = cn(
-    "bg-white border-b max-w-[90vw] mx-auto",
+    "bg-white border-b max-w-[90vw] h-16 mx-auto",
     "top-0 z-50 py-2 px-2",
-    "flex justify-between ",
+    "flex justify-between items-center ",
     {
       sticky: sticky,
     },
@@ -27,10 +27,12 @@ const Header = ({ className, user, children, sticky = false }: HeaderProps) => {
 
   return (
     <div className={style}>
-      <Link href={"/"}>
-        <Logo.Isotype size="sm" flow="row" />
-      </Link>
-      <div className="flex items-center justify-center gap-4">{children}</div>
+      <div className="flex items-center justify-center gap-4">
+        <Link href={"/"}>
+          <Logo.Isotype size="sm" flow="row" />
+        </Link>
+        {children}
+      </div>
       <div className="flex items-center justify-center gap-4 shrink-0">
         {user ? (
           <>

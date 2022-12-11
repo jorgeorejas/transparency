@@ -9,7 +9,7 @@ import { postPatchSchema } from "@lib/validations/post"
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "DELETE") {
     try {
-      await prisma.post.delete({
+      await prisma.posts.delete({
         where: {
           id: req.query.postId as string,
         },
@@ -17,6 +17,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       return res.status(204).end()
     } catch (error) {
+      console.log(error)
       return res.status(500).end()
     }
   }
@@ -24,7 +25,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "PATCH") {
     try {
       const postId = req.query.postId as string
-      const post = await prisma.post.findUnique({
+      const post = await prisma.posts.findUnique({
         where: {
           id: postId,
         },
@@ -34,12 +35,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       // TODO: Implement sanitization for content.
 
-      await prisma.post.update({
+      await prisma.posts.update({
         where: {
           id: post?.id || postId,
         },
         data: {
-          title: body.title || post?.title,
+          title: body.title,
           content: body.content,
         },
       })

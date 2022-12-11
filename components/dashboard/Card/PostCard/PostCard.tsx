@@ -1,11 +1,11 @@
-import { Post } from "@prisma/client"
+import { posts } from "@prisma/client"
 
 import { Button } from "@components/dashboard"
 import { Skeleton } from "@design-system/atoms"
 import { formatDate } from "@lib/utils"
 
 interface PostItemProps {
-  post: Pick<Post, "id" | "title" | "published" | "createdAt">
+  post: Pick<posts, "id" | "title" | "published" | "created_at">
 }
 export function PostCard({ post }: PostItemProps) {
   return (
@@ -19,7 +19,7 @@ export function PostCard({ post }: PostItemProps) {
         </a>
         <div>
           <p className="text-sm text-slate-600">
-            {formatDate(post.createdAt?.toDateString())}
+            {formatDate(post.created_at?.toDateString())}
           </p>
         </div>
       </div>

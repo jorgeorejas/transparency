@@ -5,7 +5,7 @@ import cn from "classnames"
 export type BasicProps = {
   children?: string | ReactNode
   className?: string
-  onClick?: () => void
+  onClick?: any
 }
 
 const Button = ({ children, className, ...props }: BasicProps) => {

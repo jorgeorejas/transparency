@@ -12,6 +12,7 @@ export const authOptions: NextAuthOptionsProps = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  secret: process.env.SECRET,
 
   adapter: PrismaAdapter(prisma),
   logger: {
@@ -27,8 +28,6 @@ export const authOptions: NextAuthOptionsProps = {
   },
   session: {
     strategy: "database",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
   },
   callbacks: {
     async session({ session, token, user }: any) {
@@ -38,6 +37,5 @@ export const authOptions: NextAuthOptionsProps = {
   },
   pages: {
     signIn: "/login",
-    signOut: "/signout",
   },
 }

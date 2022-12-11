@@ -1,9 +1,10 @@
 import { Header } from "@components/marketing/Header"
-import { authOptions } from "@lib/auth"
 import { getCurrentUser } from "@lib/session"
+import { TailwindIndicator } from "@utils/TailwindIndicator"
 import { MktNav } from "config/mkt_nav"
-import { useLiveReload } from "next-contentlayer/hooks"
 import Link from "next/link"
+import "@styles/globals.css"
+
 export default async function MarketingLayout({
   children,
 }: {
@@ -20,10 +21,7 @@ export default async function MarketingLayout({
           </Link>
         ))}
       </Header>
-      <div className="max-w-[90vw] mx-auto">
-        {children}
-        <pre>{JSON.stringify(user, null, 2)}</pre>
-      </div>
+      {children}
     </>
   )
 }

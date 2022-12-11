@@ -1,14 +1,14 @@
 import { notFound, redirect } from "next/navigation"
 import * as DashboardUI from "@components/dashboard"
 
-import { Post, User } from "@prisma/client"
+import { posts, User } from "@prisma/client"
 import prisma from "@lib/prismadb"
 import { getCurrentUser } from "@lib/session"
 import { authOptions } from "@lib/auth"
 import { Editor } from "@components/dashboard"
 
-async function getPostForUser(postId: Post["id"], userId: User["id"]) {
-  return await prisma.post.findFirst({
+async function getPostForUser(postId: posts["id"], userId: User["id"]) {
+  return await prisma.posts.findFirst({
     where: {
       id: postId,
       authorId: userId,

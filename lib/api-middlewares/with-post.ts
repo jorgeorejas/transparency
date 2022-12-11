@@ -16,7 +16,7 @@ export function withPost(handler: NextApiHandler) {
 
       // Check if the user has access to this post.
       const session = await unstable_getServerSession(req, res, authOptions)
-      const count = await prisma.post.count({
+      const count = await prisma.posts.count({
         where: {
           id: query.postId,
           authorId: session.user.id,

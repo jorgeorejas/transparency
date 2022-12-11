@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,24 +5,22 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  relationMode = "prisma"
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -42,21 +37,13 @@ model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
-  password      String?
   emailVerified DateTime?
-  userType      userType @default(ADMIN)
   image         String?
-  accounts      Account[]
-  sessions      Session[]
-
-  posts Post[]
-
-}
-
-enum userType {
-  OWNER
-  ADMIN
-  USER
+  password      String?
+  userType      userType  @default(ADMIN)
+  Account       Account[]
+  Session       Session[]
+  posts         posts[]
 }
 
 model VerificationToken {
@@ -67,14 +54,19 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   Json?
-  published Boolean  @default(false)
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @default(now()) @map(name: "updated_at")
-  authorId  String
-  author User @relation(fields: [authorId], references: [id])
-  @@map(name: "posts")
+model posts {
+  id         String   @id @default(cuid())
+  title      String
+  content    Json?
+  published  Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  authorId   String
+  user       User     @relation(fields: [authorId], references: [id])
+}
+
+enum userType {
+  OWNER
+  ADMIN
+  USER
 }

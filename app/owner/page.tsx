@@ -7,7 +7,7 @@ import { redirect } from "next/navigation"
 import { cache } from "react"
 
 const getPostsForUser = cache(async (userId: User["id"]) => {
-  return await prisma.post.findMany({
+  return await prisma.posts.findMany({
     where: {
       authorId: userId,
     },
@@ -16,10 +16,10 @@ const getPostsForUser = cache(async (userId: User["id"]) => {
       title: true,
       published: true,
       content: true,
-      createdAt: true,
+      created_at: true,
     },
     orderBy: {
-      updatedAt: "desc",
+      updated_at: "desc",
     },
   })
 })
