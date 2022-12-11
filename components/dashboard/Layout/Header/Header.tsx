@@ -12,7 +12,7 @@ export function DashboardHeader({
   children,
 }: DashboardHeaderProps) {
   return (
-    <div className="flex items-center justify-between py-2">
+    <div className="flex items-center justify-between py-2 h-28 ">
       <div className="grid gap-1">
         <Text.Header htmlTag="h4">{heading}</Text.Header>
         {text && <Text>{text}</Text>}

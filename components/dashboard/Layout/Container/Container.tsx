@@ -9,7 +9,7 @@ export function DashboardContainer({
   children,
   type = "default",
 }: DashboardContainerProps) {
-  const style = cn("max-w-[90vw] mx-auto", {
+  const style = cn({
     "flex flex-col": type === "default",
     "grid grid-cols-2 gap-4": type === "grid-cols-2",
     "grid grid-cols-3 gap-4": type === "grid-cols-3",

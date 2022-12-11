@@ -1,4 +1,4 @@
-export const MktNav: MktNavProps = {
+export const navigation: navigationProps = {
   items: [
     {
       name: "Home",
@@ -14,11 +14,11 @@ export const MktNav: MktNavProps = {
     },
   ],
 }
-export type MktNavProps = {
-  items: MktNavItem[]
+export type navigationProps = {
+  items: navigationItem[]
 }
 
-export type MktNavItem = {
+export type navigationItem = {
   name: string
   url: string
 }

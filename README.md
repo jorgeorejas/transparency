@@ -13,6 +13,7 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 - [x] Authentication using **NextAuth**
 - [x] Database ORM using **Prisma**
 - [x] Documentation and Blog Editor powered by **MDX** and **Editor.js**
+- [ ] Owner Dashboard
 - [ ] Blog
 - [ ] UI Components Library (**Radix UI** + **Tremor** )
 - [ ] User management and roles using **NextAuth**

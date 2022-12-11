@@ -3,12 +3,13 @@ import { notFound } from "next/navigation"
 import { Header } from "@components/marketing"
 import { getCurrentUser } from "@lib/session"
 import * as DashboardUI from "@components/dashboard"
+
 interface DashboardLayoutProps {
   children?: React.ReactNode
   params: string
 }
 
-export default async function DashboardLayout({
+export default async function PostsLayout({
   params,
   children,
 }: DashboardLayoutProps) {
@@ -19,11 +20,14 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="space-y-6">
-      <Header user={user} sticky={true} />
-      <DashboardUI.Layout.DashboardPanel>
-        {children}
-      </DashboardUI.Layout.DashboardPanel>
-    </div>
+    <>
+      <DashboardUI.Layout.DashboardHeader
+        heading="Posts"
+        text="Create and manage posts."
+      >
+        <DashboardUI.Button.PostCreateButton userId={user.id} />
+      </DashboardUI.Layout.DashboardHeader>
+      {children}
+    </>
   )
 }

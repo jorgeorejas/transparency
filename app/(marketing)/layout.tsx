@@ -1,7 +1,7 @@
 import { Header } from "@components/marketing/Header"
 import { getCurrentUser } from "@lib/session"
 import { TailwindIndicator } from "@utils/TailwindIndicator"
-import { MktNav } from "config/mkt_nav"
+import { navigation } from "config/marketing"
 import Link from "next/link"
 import "@styles/globals.css"
 
@@ -15,7 +15,7 @@ export default async function MarketingLayout({
   return (
     <>
       <Header user={user} sticky={true}>
-        {MktNav.items.map((item) => (
+        {navigation.items.map((item) => (
           <Link key={item.name} href={item.url}>
             {item.name}
           </Link>

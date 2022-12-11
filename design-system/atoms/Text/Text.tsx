@@ -31,7 +31,7 @@ const Text = ({ children, className, htmlTag = "p" }: TextProps) => {
 }
 
 type TextHeaderProps = BaseProps & {
-  htmlTag: HeaderAllowedTags
+  htmlTag?: HeaderAllowedTags
 }
 
 Text.Header = function Header({
