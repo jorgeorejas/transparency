@@ -13,6 +13,7 @@ export type BannerBlogProps = {
   className?: string
   leftImg?: boolean
   hasCTA?: boolean
+  id?: string
 }
 
 export default function BannerBlog({
@@ -22,11 +23,12 @@ export default function BannerBlog({
   className,
   leftImg = false,
   hasCTA = false,
+  id,
 }: BannerBlogProps) {
   switch (leftImg) {
     case true: {
       return (
-        <Section type="grid-cols-2" className={className}>
+        <Section type="grid-cols-2" className={className} id={id}>
           <BannerImage />
           <BannerText hasCTA={hasCTA} />
         </Section>
@@ -34,7 +36,7 @@ export default function BannerBlog({
     }
     case false:
       return (
-        <Section type="grid-cols-2" className={className}>
+        <Section type="grid-cols-2" className={className} id={id}>
           <BannerText hasCTA={hasCTA} />
           <BannerImage />
         </Section>
@@ -63,8 +65,8 @@ export default function BannerBlog({
         </Text.Header>
         {hasCTA && (
           <div className="flex gap-4">
-            <Button.Link href="#latest">Latest Posts</Button.Link>
-            <Button.Link href="#featured">Featured Posts</Button.Link>
+            <Button.Link href="/blog#latest">Latest Posts</Button.Link>
+            <Button.Link href="/blog#featured">Featured Posts</Button.Link>
           </div>
         )}
       </div>

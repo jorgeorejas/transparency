@@ -1,5 +1,5 @@
 import "@styles/globals.css"
-import { TailwindIndicator } from "@utils/TailwindIndicator"
+import "@tremor/react/dist/esm/tremor.css"
 
 export default function RootLayout({
   children,

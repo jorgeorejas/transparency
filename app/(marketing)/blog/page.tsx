@@ -34,7 +34,12 @@ export default async function BlogPage() {
         description={pageInfo.description}
         hasCTA
       />
-      <Section.Info header="All Posts" type="grid-cols-3">
+      <Section.Info
+        header="Latest posts"
+        type="grid-cols-3"
+        className="min-h-60"
+        id="latest"
+      >
         {posts.map((post, i) => (
           <PostCard post={post} key={i} />
         ))}
@@ -50,8 +55,10 @@ function PostCard({ post }) {
         {post.image && (
           <Image alt={post.title} src={post.image} imgAspectRatio="mac" />
         )}
-        <Text.Header htmlTag="h4">{post.title}</Text.Header>
-        <Text>{post.description}</Text>
+        <div className="flex flex-col justify-center h-24">
+          <Text.Header htmlTag="h4">{post.title}</Text.Header>
+          <Text.Normal className="line-clamp-2">{post.description}</Text.Normal>
+        </div>
       </Card>
     </Link>
   )

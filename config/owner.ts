@@ -50,7 +50,7 @@ export const navigation: navigationProps = {
       type: "link",
       name: "Billing",
       url: "/owner/billing",
-      disabled: true,
+      disabled: false,
       icon: "CreditCardIcon",
     },
 

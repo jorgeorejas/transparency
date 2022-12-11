@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 h1 {
   font-size: calc(24px + 2vw);
 }

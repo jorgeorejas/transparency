@@ -47,11 +47,7 @@ Text.Header = function Header({
 }
 
 Text.Normal = function Normal({ children, className }: BaseProps) {
-  return (
-    <Text htmlTag="p" className={className}>
-      {children}
-    </Text>
-  )
+  return <p className={className}>{children}</p>
 }
 type TextLinkProps = BaseProps & {
   href: string
