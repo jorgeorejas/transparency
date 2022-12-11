@@ -19,7 +19,7 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="min-h-screen space-y-6">
       <Header user={user} sticky={true} />
       <DashboardUI.Layout.DashboardPanel>
         {children}

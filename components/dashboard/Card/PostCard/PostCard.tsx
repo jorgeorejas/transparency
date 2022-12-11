@@ -12,14 +12,19 @@ export function PostCard({ post }: PostItemProps) {
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
         <a
-          href={`/owner/editor/${post.id}`}
+          href={`/owner/posts/editor/${post.id}`}
           className="font-semibold hover:underline"
         >
-          {post.title}
+          {post.title}{" "}
         </a>
         <div>
           <p className="text-sm text-slate-600">
             {formatDate(post.created_at?.toDateString())}
+            {post.published ? null : (
+              <span className="px-2 ml-2 py-0.5 rounded hover:no-underline text-slate-700 text-sm bg-slate-200">
+                Private Post
+              </span>
+            )}
           </p>
         </div>
       </div>

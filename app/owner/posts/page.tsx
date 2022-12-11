@@ -1,4 +1,5 @@
 import * as DashboardUI from "@components/dashboard"
+import { Card } from "@design-system/molecules"
 import { authOptions } from "@lib/auth"
 import prisma from "@lib/prismadb"
 import { getCurrentUser } from "@lib/session"
@@ -30,20 +31,28 @@ export default async function PostsPage() {
   }
   const posts = await getPostsForUser(user.id)
   return (
-    <DashboardUI.Layout.DashboardContainer>
-      <div>
-        {posts?.length ? (
-          <div className="border divide-y rounded-md divide-neutral-200 border-slate-200">
-            {posts.map((post) => (
-              <DashboardUI.Card.PostCard key={post.id} post={post} />
-            ))}
-          </div>
-        ) : (
-          <div className="border divide-y rounded-md divide-neutral-200 border-slate-200">
-            <DashboardUI.Card.PostCard.Skeleton />
-          </div>
-        )}
-      </div>
-    </DashboardUI.Layout.DashboardContainer>
+    <>
+      <DashboardUI.Layout.DashboardHeader
+        heading="Posts"
+        text="Create and manage posts."
+      >
+        <DashboardUI.Button.PostCreateButton userId={user.id} />
+      </DashboardUI.Layout.DashboardHeader>
+      <DashboardUI.Layout.DashboardContainer>
+        <div>
+          {posts?.length ? (
+            <Card className="border divide-y rounded-md divide-neutral-200 border-slate-200">
+              {posts.map((post) => (
+                <DashboardUI.Card.PostCard key={post.id} post={post} />
+              ))}
+            </Card>
+          ) : (
+            <div className="border divide-y rounded-md divide-neutral-200 border-slate-200">
+              <DashboardUI.Card.PostCard.Skeleton />
+            </div>
+          )}
+        </div>
+      </DashboardUI.Layout.DashboardContainer>
+    </>
   )
 }

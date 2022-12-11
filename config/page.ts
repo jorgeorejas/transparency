@@ -13,3 +13,11 @@ export type PageInfoProps = {
   icon: IconsNames
 }
 export type IconsNames = keyof typeof Outline
+
+export const pageConfig: PageConfigProps = {
+  iconPreference: "outline",
+}
+
+export type PageConfigProps = {
+  iconPreference: "outline" | "solid"
+}
