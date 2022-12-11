@@ -1,6 +1,9 @@
 import { posts } from "@prisma/client"
 
-import { Button } from "@components/dashboard"
+import {
+  PostDeleteButton,
+  PostPublishButton,
+} from "@components/dashboard/Button"
 import { Skeleton } from "@design-system/atoms"
 import { formatDate } from "@lib/utils"
 
@@ -28,8 +31,17 @@ export function PostCard({ post }: PostItemProps) {
           </p>
         </div>
       </div>
-
-      <Button.PostDeleteButton postId={post.id} />
+      <div className="flex gap-2">
+        <PostPublishButton
+          isPublic={post.published}
+          postId={post.id}
+          className="flex items-center justify-center w-full"
+        />
+        <PostDeleteButton
+          postId={post.id}
+          className="flex items-center justify-center w-full"
+        />
+      </div>
     </div>
   )
 }

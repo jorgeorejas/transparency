@@ -17,11 +17,38 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       return res.status(204).end()
     } catch (error) {
-      console.log(error)
       return res.status(500).end()
     }
   }
+  if (req.method === "PUBLISH") {
+    try {
+      const postId = req.query.postId as string
+      const post = await prisma.posts.findUnique({
+        where: {
+          id: postId,
+        },
+      })
 
+      // TODO: Implement sanitization for content.
+
+      await prisma.posts.update({
+        where: {
+          id: post?.id || postId,
+        },
+        data: {
+          published: !post?.published,
+        },
+      })
+
+      return res.end()
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(422).json(error.issues)
+      }
+
+      return res.status(422).end()
+    }
+  }
   if (req.method === "PATCH") {
     try {
       const postId = req.query.postId as string
@@ -56,4 +83,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-export default withMethods(["DELETE", "PATCH"], withPost(handler))
+export default withMethods(["DELETE", "PUBLISH", "PATCH"], withPost(handler))
