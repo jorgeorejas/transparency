@@ -23,7 +23,7 @@ export default function Image({
   src,
   alt,
 }: ImageProps) {
-  const containerStyle = cn(className, "rounded-xl overflow-hidden shadow", {
+  const containerStyle = cn(className, "rounded-lg overflow-hidden shadow", {
     "aspect-video": imgAspectRatio === "video",
     "aspect-crt": imgAspectRatio === "crt",
     "aspect-square": imgAspectRatio === "square",

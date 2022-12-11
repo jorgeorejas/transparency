@@ -12,6 +12,7 @@ export type BannerBlogProps = {
   description: string
   className?: string
   leftImg?: boolean
+  hasCTA?: boolean
 }
 
 export default function BannerBlog({
@@ -20,20 +21,21 @@ export default function BannerBlog({
   description,
   className,
   leftImg = false,
+  hasCTA = false,
 }: BannerBlogProps) {
   switch (leftImg) {
     case true: {
       return (
         <Section type="grid-cols-2" className={className}>
           <BannerImage />
-          <BannerText />
+          <BannerText hasCTA={hasCTA} />
         </Section>
       )
     }
     case false:
       return (
         <Section type="grid-cols-2" className={className}>
-          <BannerText />
+          <BannerText hasCTA={hasCTA} />
           <BannerImage />
         </Section>
       )
@@ -50,7 +52,7 @@ export default function BannerBlog({
     )
   }
 
-  function BannerText() {
+  function BannerText({ hasCTA = false }: { hasCTA?: boolean }) {
     return (
       <div className="flex flex-col w-4/5 gap-4">
         <Text.Header htmlTag="h2" className="w-full text-justify shrink-0">
@@ -59,10 +61,12 @@ export default function BannerBlog({
         <Text.Header htmlTag="h4" className="text-justify">
           {description}
         </Text.Header>
-        <div className="flex gap-4">
-          <Button.Link href="#latest">Latest Posts</Button.Link>
-          <Button.Link href="#featured">Featured Posts</Button.Link>
-        </div>
+        {hasCTA && (
+          <div className="flex gap-4">
+            <Button.Link href="#latest">Latest Posts</Button.Link>
+            <Button.Link href="#featured">Featured Posts</Button.Link>
+          </div>
+        )}
       </div>
     )
   }

@@ -55,6 +55,14 @@ p {
   }
 }
 
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
