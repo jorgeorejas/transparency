@@ -7,16 +7,18 @@ export type BasicProps = {
   children?: string | ReactNode
   className?: string
   onClick?: any
+  disabled?: boolean
 }
 
-const Button = ({ children, className, ...props }: BasicProps) => {
+const Button = ({ children, className, disabled, ...props }: BasicProps) => {
   return (
     <button
       className={cn(
-        "relative inline-flex items-center h-8 px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2",
+        "relative inline-flex items-center px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md h-9 bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2",
         className
       )}
       {...props}
+      disabled={disabled}
     >
       {children}
     </button>

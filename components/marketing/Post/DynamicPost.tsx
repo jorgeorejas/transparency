@@ -2,7 +2,7 @@ import { Text } from "@design-system/atoms"
 
 export default function DynamicPost({ blocks }) {
   return (
-    <article className="prose lg:prose-xl">
+    <article className="prose prose-stone">
       {blocks.blocks.map((block) => (
         <Block key={block.id} block={block} />
       ))}

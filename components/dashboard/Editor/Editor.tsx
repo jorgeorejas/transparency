@@ -9,12 +9,17 @@ import TextareaAutosize from "react-textarea-autosize"
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
-
+import { Text } from "@design-system/atoms"
 import { postPatchSchema } from "@lib/validations/post"
 import { ToastMessage, Icon } from "@design-system/atoms"
+import { PostPublishButton } from "../Button"
+import { Card } from "@design-system/molecules"
 
 interface EditorProps {
-  post: Pick<posts, "id" | "title" | "content" | "published">
+  post: Pick<
+    posts,
+    "id" | "title" | "content" | "published" | "description" | "slug"
+  >
 }
 
 type FormData = z.infer<typeof postPatchSchema>
@@ -27,6 +32,7 @@ export function Editor({ post }: EditorProps) {
   const router = useRouter()
   const [isSaving, setIsSaving] = React.useState<boolean>(false)
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const [hasChanges, setHasChanges] = React.useState<boolean>(false)
 
   async function initializeEditor() {
     const EditorJS = (await import("@editorjs/editorjs")).default
@@ -46,6 +52,9 @@ export function Editor({ post }: EditorProps) {
         onReady() {
           ref.current = editor
         },
+        onChange() {
+          setHasChanges(true)
+        },
         placeholder: "Type here to write your post...",
         inlineToolbar: true,
         data: body.content,
@@ -54,7 +63,7 @@ export function Editor({ post }: EditorProps) {
             class: Header,
             config: {
               placeholder: "Header",
-              levels: [1, 2, 3, 4, 5, 6],
+              levels: [1, 2, 3],
               defaultLevel: 2,
             },
           },
@@ -99,6 +108,8 @@ export function Editor({ post }: EditorProps) {
       body: JSON.stringify({
         title: data.title,
         content: blocks,
+        description: data.description,
+        slug: data.slug,
       }),
     })
 
@@ -112,6 +123,7 @@ export function Editor({ post }: EditorProps) {
       })
     }
 
+    setHasChanges(false)
     router.refresh()
 
     return ToastMessage({
@@ -142,18 +154,26 @@ export function Editor({ post }: EditorProps) {
               {post.published ? "Published" : "Draft"}
             </p>
           </div>
-          <button
-            type="submit"
-            className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md h-9 bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-          >
-            {isSaving && (
-              <Icon
-                name="ArrowDownTrayIcon"
-                className="w-4 h-4 mr-2 animate-bounce"
-              />
-            )}
-            <span>Save</span>
-          </button>
+          <div className="flex gap-4">
+            <PostPublishButton
+              postId={post.id}
+              isPublic={post.published}
+              disabled={hasChanges}
+              className="h-9"
+            />
+            <button
+              type="submit"
+              className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md h-9 bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+            >
+              {isSaving && (
+                <Icon
+                  name="ArrowDownTrayIcon"
+                  className="w-4 h-4 mr-2 animate-bounce"
+                />
+              )}
+              <span>Save</span>
+            </button>
+          </div>
         </div>
         <div className="prose prose-stone mx-auto w-[800px]">
           <TextareaAutosize
@@ -164,7 +184,31 @@ export function Editor({ post }: EditorProps) {
             placeholder="Post title"
             className="w-full overflow-hidden text-5xl font-bold appearance-none resize-none focus:outline-none"
             {...register("title")}
+            onChange={() => setHasChanges(true)}
           />
+          <TextareaAutosize
+            name="description"
+            id="description"
+            defaultValue={post.description}
+            placeholder="Post description"
+            className="w-full overflow-hidden text-lg font-medium appearance-none resize-none focus:outline-none"
+            {...register("description")}
+            onChange={() => setHasChanges(true)}
+          />
+
+          <Text className="flex gap-4">
+            Slug:{" "}
+            <TextareaAutosize
+              name="slug"
+              id="slug"
+              defaultValue={post.slug}
+              placeholder="Post slug"
+              className="w-full overflow-hidden text-lg font-medium appearance-none resize-none focus:outline-none"
+              {...register("slug")}
+              onChange={() => setHasChanges(true)}
+            />
+          </Text>
+
           <div id="editor" className="min-h-[500px]" />
           <p className="text-sm text-gray-500">
             Use{" "}

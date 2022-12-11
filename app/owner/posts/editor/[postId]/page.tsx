@@ -41,6 +41,8 @@ export default async function EditorPage({ params }: EditorPageProps) {
           title: post.title,
           content: post.content,
           published: post.published,
+          slug: post.slug,
+          description: post.description,
         }}
       />
     </DashboardUI.Layout.DashboardContainer>

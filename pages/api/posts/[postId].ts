@@ -69,6 +69,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         data: {
           title: body.title,
           content: body.content,
+          slug: body.slug,
+          description: body.description,
         },
       })
 

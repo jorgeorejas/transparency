@@ -10,12 +10,14 @@ interface PostPublishButtonProps {
   className?: string
   postId: string
   isPublic: boolean
+  disabled?: boolean
 }
 
 export function PostPublishButton({
   className,
   postId,
   isPublic,
+  disabled = false,
   ...props
 }: PostPublishButtonProps) {
   const router = useRouter()
@@ -37,9 +39,10 @@ export function PostPublishButton({
   return (
     <Button
       onClick={() => onClick(isPublic)}
+      disabled={disabled}
       className={cn(
         {
-          "cursor-not-allowed opacity-60": isLoading,
+          "cursor-not-allowed opacity-60": isLoading || disabled,
         },
         className
       )}
@@ -50,10 +53,10 @@ export function PostPublishButton({
       ) : (
         <Icon
           name={isPublic ? "LockClosedIcon" : "LockOpenIcon"}
-          className="w-4 h-4 mr-2"
+          className={disabled ? "hidden" : "w-4 h-4 mr-2"}
         />
       )}
-      {isPublic ? "Unpublish" : "Publish"}
+      {disabled ? "Save First" : isPublic ? "Unpublish" : "Publish"}
     </Button>
   )
 }
