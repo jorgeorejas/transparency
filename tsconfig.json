@@ -24,6 +24,7 @@
       "@lib/*": ["lib/*"],
       "@types/*": ["types/*"],
       "@pages/*": ["pages/*"],
+      "@assets/*": ["assets/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [

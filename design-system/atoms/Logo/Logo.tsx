@@ -1,6 +1,7 @@
 import { Icon } from "../Icon"
 import cn from "classnames"
 import { pageInfo } from "config/page"
+import Link from "next/link"
 export type LogoProps = {
   size: "lg" | "md" | "sm"
   className?: string
@@ -32,9 +33,9 @@ const Logo = ({
     className
   )
   return (
-    <div className={divStyle}>
+    <Link href="/" className={divStyle}>
       <Icon name={pageInfo.icon} className={style} {...props} />
-    </div>
+    </Link>
   )
 }
 
@@ -75,10 +76,10 @@ const Isotype = ({
   )
 
   return (
-    <div className={divStyle}>
+    <Link href="/" className={divStyle}>
       <Icon name={pageInfo.icon} className={iconStyle} {...props} />
       <span className={textStyle}>{pageInfo.title}</span>
-    </div>
+    </Link>
   )
 }
 

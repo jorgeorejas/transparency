@@ -17,7 +17,7 @@ export default function LoginPage() {
       </Link>
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
-          <Logo.Isotype flow="column" size="md" />
+          <Logo.Isotype flow="column" size="lg" />
           <h1 className="text-2xl font-bold">Welcome back</h1>
           <p className="text-sm text-slate-600">
             Enter your email to sign in to your account
