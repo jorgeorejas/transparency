@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation"
 import { Text } from "@design-system/atoms"
 import { postPatchSchema } from "@lib/validations/post"
 import { ToastMessage, Icon } from "@design-system/atoms"
-import { PostPublishButton } from "../Button"
+import { PostPublishButton } from "../Button/Post"
 import { Card } from "@design-system/molecules"
 
 interface EditorProps {

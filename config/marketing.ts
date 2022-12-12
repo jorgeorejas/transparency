@@ -8,10 +8,6 @@ export const navigation: navigationProps = {
       name: "Owners",
       url: "/owner",
     },
-    {
-      name: "Dashboard",
-      url: "/dashboard",
-    },
   ],
 }
 export type navigationProps = {

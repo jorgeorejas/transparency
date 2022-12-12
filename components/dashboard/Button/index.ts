@@ -1,3 +1,2 @@
-export { PostCreateButton } from "./CreatePost"
-export { PostDeleteButton } from "./DeletePost"
-export { PostPublishButton } from "./PublishPost"
+export * as Price from "./Price"
+export * as Post from "./Post"

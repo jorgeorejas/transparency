@@ -3,7 +3,7 @@ import { posts } from "@prisma/client"
 import {
   PostDeleteButton,
   PostPublishButton,
-} from "@components/dashboard/Button"
+} from "@components/dashboard/Button/Post"
 import { Skeleton } from "@design-system/atoms"
 import { formatDate } from "@lib/utils"
 
@@ -14,12 +14,14 @@ export function PostCard({ post }: PostItemProps) {
   return (
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
-        <a
-          href={`/owner/posts/editor/${post.id}`}
-          className="font-semibold hover:underline"
-        >
-          {post.title}{" "}
-        </a>
+        <p>
+          <a
+            href={`/owner/posts/editor/${post.id}`}
+            className="font-semibold hover:underline"
+          >
+            {post.title}{" "}
+          </a>
+        </p>
         <div>
           <p className="text-sm text-slate-600">
             {formatDate(post.created_at?.toDateString())}

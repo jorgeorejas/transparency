@@ -53,7 +53,13 @@ export const navigation: navigationProps = {
       disabled: false,
       icon: "CreditCardIcon",
     },
-
+    {
+      type: "link",
+      name: "Features",
+      url: "/owner/features",
+      disabled: true,
+      icon: "LightBulbIcon",
+    },
     {
       type: "divider",
       divider: "hr",

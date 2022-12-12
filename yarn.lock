@@ -1475,6 +1475,13 @@
     protobufjs "^7.0.0"
     yargs "^16.2.0"
 
+"@headlessui/react@^1.7.5":
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.5.tgz#c8864b0731d95dbb34aa6b3a60d0ee9ae6f8a7ca"
+  integrity sha512-UZSxOfA0CYKO7QDT5OGlFvesvlR1SKkawwSjwQJwt7XQItpzRKdE3ZUQxHcg4LEz3C0Wler2s9psdb872ynwrQ==
+  dependencies:
+    client-only "^0.0.1"
+
 "@heroicons/react@^2.0.13":
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
@@ -3621,6 +3628,11 @@
   resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
   integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
 
+"@types/stripe-v3@^3.1.27":
+  version "3.1.27"
+  resolved "https://registry.yarnpkg.com/@types/stripe-v3/-/stripe-v3-3.1.27.tgz#f0cc9af7edc67d90665224f726d6dead90465dc8"
+  integrity sha512-lsOXNRfYyzz45HW4FXXKWsx/6d2BpwDSYcmwLZOS81XarHFQFTqiqVq1bsLMebKgEz7+qQ2LLAPhmn8StQbi8w==
+
 "@types/tapable@^1", "@types/tapable@^1.0.5":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
@@ -5212,7 +5224,7 @@ cli-table3@^0.6.1:
   optionalDependencies:
     "@colors/colors" "1.5.0"
 
-client-only@0.0.1:
+client-only@0.0.1, client-only@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==

@@ -28,9 +28,7 @@ const Header = ({ className, user, children, sticky = false }: HeaderProps) => {
   return (
     <div className={style}>
       <div className="flex items-center justify-center gap-4">
-        <Link href={"/"}>
-          <Logo.Isotype size="sm" flow="row" />
-        </Link>
+        <Logo.Isotype size="sm" flow="row" />
         {children}
       </div>
       <div className="flex items-center justify-center gap-4 shrink-0">

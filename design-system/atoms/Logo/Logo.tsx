@@ -6,12 +6,14 @@ export type LogoProps = {
   size: "lg" | "md" | "sm"
   className?: string
   flow: "row" | "column"
+  hasLink?: boolean
 }
 
 const Logo = ({
   size = "md",
   flow = "row",
   className,
+  hasLink = false,
   ...props
 }: LogoProps) => {
   const style = cn({
@@ -32,17 +34,26 @@ const Logo = ({
     },
     className
   )
-  return (
-    <Link href="/" className={divStyle}>
-      <Icon name={pageInfo.icon} className={style} {...props} />
-    </Link>
-  )
+  if (hasLink) {
+    return (
+      <Link href="/" className={divStyle}>
+        <Icon name={pageInfo.icon} className={style} {...props} />
+      </Link>
+    )
+  } else {
+    return (
+      <div className={divStyle}>
+        <Icon name={pageInfo.icon} className={style} {...props} />
+      </div>
+    )
+  }
 }
 
 const Isotype = ({
   size = "md",
   flow = "row",
   className,
+  hasLink = false,
   ...props
 }: LogoProps) => {
   const iconStyle = cn(
@@ -74,13 +85,21 @@ const Isotype = ({
     },
     className
   )
-
-  return (
-    <Link href="/" className={divStyle}>
-      <Icon name={pageInfo.icon} className={iconStyle} {...props} />
-      <span className={textStyle}>{pageInfo.title}</span>
-    </Link>
-  )
+  if (hasLink) {
+    return (
+      <Link href="/" className={divStyle}>
+        <Icon name={pageInfo.icon} className={iconStyle} {...props} />
+        <span className={textStyle}>{pageInfo.title}</span>
+      </Link>
+    )
+  } else {
+    return (
+      <div className={divStyle}>
+        <Icon name={pageInfo.icon} className={iconStyle} {...props} />
+        <span className={textStyle}>{pageInfo.title}</span>
+      </div>
+    )
+  }
 }
 
 Logo.Isotype = Isotype

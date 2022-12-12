@@ -71,3 +71,7 @@ ul {
   width: 0px;
   background: transparent;
 }
+
+input {
+  @apply block w-full px-3 py-2 my-0 mb-2 text-sm border rounded-md h-9 border-slate-300 placeholder:text-slate-400 hover:border-slate-400 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-800 focus:ring-offset-1;
+}
