@@ -86,6 +86,12 @@ export type divider = {
   divider: "hr" | "blank"
 }
 // exports the urls of the navigation items that are links
-export const navUrls = navigation.items
-  .filter((item) => item.type === "link")
-  .map((item) => item.url)
+export const navUrls = [
+  "/owner",
+  "/owner/posts",
+  "/owner/billing",
+  "/owner/settings",
+  "/owner/analytics",
+  "/owner/mailing",
+  "/owner/users",
+]

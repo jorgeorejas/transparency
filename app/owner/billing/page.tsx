@@ -5,7 +5,7 @@ import { stripe } from "@lib/stripe"
 import { redirect } from "next/navigation"
 import { cache } from "react"
 import * as Tremor from "@tremor/react"
-import { SmartTable } from "@design-system/organisms"
+
 const getStripeSubscriptions = cache(async () => {
   return stripe.prices.list({})
 })
