@@ -23,7 +23,7 @@ export const landingHero: BannerCTAProps = {
   img: {
     alt: "banner image",
     src: "https://picsum.photos/seed/hr/1920/1080",
-    imgAspectRatio: "crt",
+    imgAspectRatio: "mac",
   },
   cta: "Show me more",
   ctaDestination: "/",

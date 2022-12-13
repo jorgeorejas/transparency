@@ -12,27 +12,30 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
 - [x] Storybook
 - [x] Authentication using **NextAuth**
 - [x] Database ORM using **Prisma**
-- [x] Documentation and Blog Editor powered by **MDX** and **Editor.js**
-- [x] Blog
-- [ ] Payments and Subscriptions using **Stripe**
 - [ ] Owner Dashboard
-- [ ] UI Components Library (**Radix UI** + **Tremor** )
-- [ ] User management and roles using **NextAuth**
-- [ ] Custom domain & multi-tenancy
-- [ ] Loading UI
-- [ ] API Routes and Middlewares
-- [ ] Blog SEO to improve search engine ranking and Inbound Marketing
-- [ ] Dashboard with Business Metrics
-- [ ] Docker Ready for Production
-- [ ] Responsive Design using **TailwindCSS**
-- [ ] Testing tools
-- [ ] Vercel OG Image for Social Media
-- [ ] Self Hosted Analytics based on **Umami**
-- [ ] Self Hosted or Third Party Email
-- [ ] Email Templates powered by **MDX** and **Editor.js**
-- [ ] Self Hosted or Third Party Database (PostgreSQL)
-- [ ] Dark Mode using **TailwindCSS**
-- [ ] CLI for Choosing Features
+  - [x] Blog Editor powered by **MDX** and **Editor.js**
+  - [ ] Payments and Subscriptions using **Stripe**
+  - [ ] Marketing Pages editor powered by **MDX** and **Editor.js**
+  - [ ] User management and roles using **NextAuth**
+  - [ ] Business Metrics built with **Tremor**
+  - [ ] Self Hosted Analytics based on **Umami**
+  - [ ] Email Templates powered by **MDX** and **Editor.js**
+  - [ ] Email implementation
+  - [ ] Images and Files management
+- [ ] Blog
+  - [x] Blog Page
+  - [ ] Blog SEO to improve search engine ranking and Inbound Marketing
+- [ ] Aesthetics
+  - [ ] UI Components Library (**Radix UI** + **Tremor** )
+  - [ ] Loading UI
+  - [ ] Vercel OG Image for Social Media
+  - [ ] Dark Mode using **TailwindCSS**
+  - [ ] Responsive Design using **TailwindCSS**
+- [ ] Dev tools
+  - [ ] API Routes and Middlewares
+  - [ ] Docker Ready for Production
+  - [ ] Testing tools
+  - [ ] CLI for Choosing Features
 
 ## How to use
 
