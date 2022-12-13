@@ -1,10 +1,10 @@
-# This is my framework for a SaaS
+# Transparency
+
+Transparency is a boilerplate that helps you build your next SaaS product faster than ever before.
 
 ## What is this?
 
-This is a framework for a SaaS. It is a collection of tools and best practices that I have found useful in building a SaaS. It is not a framework in the sense that it is a set of tools that you can use to build a SaaS. It is a framework in the sense that it is a set of tools that I have found useful in building a SaaS.
-
-This will allow to build a SaaS in a way that is easy to maintain and extend. It will also allow to build a SaaS in a way that is easy to test and deploy.
+This is a boilerplate for a SaaS. It is a collection of tools and best practices that I have found useful in building a SaaS. Everything is open source and free to use. I hope that this will help you build your SaaS faster.
 
 ## Features
 
@@ -32,7 +32,17 @@ This will allow to build a SaaS in a way that is easy to maintain and extend. It
 - [ ] Email Templates powered by **MDX** and **Editor.js**
 - [ ] Self Hosted or Third Party Database (PostgreSQL)
 - [ ] Dark Mode using **TailwindCSS**
-- [ ] Invoice Generation using **PDFKit**
+- [ ] CLI for Choosing Features
+
+## How to use
+
+### Modify pages & Menus
+
+Some of the pages are generated from the data on the config files, also applies to the menus.
+
+- `config/marketing.ts` - Marketing pages and menus
+- `config/owner.ts` - Owner pages and menus
+- `config/page.ts` - Meta data for the pages
 
 ## Running Locally
 
