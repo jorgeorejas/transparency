@@ -16,7 +16,7 @@ export type HeaderProps = {
 
 const Header = ({ className, user, children, sticky = false }: HeaderProps) => {
   const style = cn(
-    "bg-white border-b max-w-[90vw] h-16 mx-auto",
+    "bg-white  max-w-[90vw] h-16 mx-auto",
     "top-0 z-50 py-2 px-2",
     "flex justify-between items-center ",
     {

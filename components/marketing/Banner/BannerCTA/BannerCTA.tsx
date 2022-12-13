@@ -9,7 +9,7 @@ import { redirect } from "next/navigation"
 export type BannerCTAProps = {
   img: ImageProps
   title: string
-  description: string
+  description: string[]
   cta: string
   ctaDestination: string
   className?: string
@@ -29,26 +29,8 @@ export default function BannerCTA({
     case true: {
       return (
         <Section type="grid-cols-2" className={className}>
-          <Image
-            alt={img.alt}
-            src={img.src}
-            imgAspectRatio={img.imgAspectRatio}
-            className="shrink-0"
-          />
-          <div className="flex flex-col w-4/5 gap-4">
-            <Text.Header htmlTag="h2" className="w-full text-justify shrink-0">
-              {title}
-            </Text.Header>
-            <Text.Header htmlTag="h4" className="text-justify">
-              {description}
-            </Text.Header>
-            <Button
-              onClick={() => redirect(ctaDestination)}
-              className="mr-auto "
-            >
-              {cta}
-            </Button>
-          </div>
+          <BannerImage />
+          <BannerText />
         </Section>
       )
       break
@@ -56,27 +38,38 @@ export default function BannerCTA({
     case false:
       return (
         <Section type="grid-cols-2" className={className}>
-          <div className="flex flex-col w-4/5 gap-4">
-            <Text.Header htmlTag="h2" className="w-full text-justify shrink-0">
-              {title}
-            </Text.Header>
-            <Text.Header htmlTag="h4" className="text-justify">
-              {description}
-            </Text.Header>
-            <Button
-              onClick={() => redirect(ctaDestination)}
-              className="mr-auto "
-            >
-              {cta}
-            </Button>
-          </div>
-          <Image
-            alt={img.alt}
-            src={img.src}
-            imgAspectRatio={img.imgAspectRatio}
-            className="shrink-0"
-          />
+          <BannerText />
+          <BannerImage />
         </Section>
       )
+  }
+
+  function BannerImage() {
+    return (
+      <Image
+        alt={img.alt}
+        src={img.src}
+        imgAspectRatio={img.imgAspectRatio}
+        className="shrink-0"
+      />
+    )
+  }
+
+  function BannerText() {
+    return (
+      <div className="flex flex-col w-4/5 gap-4">
+        <Text.Header htmlTag="h2" className="w-full text-justify shrink-0">
+          {title}
+        </Text.Header>
+        {description.map((text, index) => (
+          <Text key={index} className="text-justify">
+            {text}
+          </Text>
+        ))}
+        <Button onClick={() => redirect(ctaDestination)} className="mr-auto ">
+          {cta}
+        </Button>
+      </div>
+    )
   }
 }
