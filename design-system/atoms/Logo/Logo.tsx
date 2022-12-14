@@ -6,14 +6,14 @@ export type LogoProps = {
   size: "lg" | "md" | "sm"
   className?: string
   flow: "row" | "column"
-  hasLink?: boolean
+  isLink?: boolean
 }
 
 const Logo = ({
   size = "md",
   flow = "row",
   className,
-  hasLink = false,
+  isLink = false,
   ...props
 }: LogoProps) => {
   const style = cn({
@@ -34,7 +34,7 @@ const Logo = ({
     },
     className
   )
-  if (hasLink) {
+  if (isLink) {
     return (
       <Link href="/" className={divStyle}>
         <Icon name={pageInfo.icon} className={style} {...props} />
@@ -53,7 +53,7 @@ const Isotype = ({
   size = "md",
   flow = "row",
   className,
-  hasLink = false,
+  isLink = false,
   ...props
 }: LogoProps) => {
   const iconStyle = cn(
@@ -85,7 +85,7 @@ const Isotype = ({
     },
     className
   )
-  if (hasLink) {
+  if (isLink) {
     return (
       <Link href="/" className={divStyle}>
         <Icon name={pageInfo.icon} className={iconStyle} {...props} />

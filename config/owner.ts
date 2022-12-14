@@ -100,4 +100,5 @@ export const navUrls = [
   "/owner/analytics",
   "/owner/mailing",
   "/owner/users",
+  "/owner/marketing",
 ]

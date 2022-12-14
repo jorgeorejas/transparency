@@ -73,3 +73,17 @@ enum userType {
   ADMIN
   USER
 }
+
+model marketingPages {
+  id         String   @id @default(cuid())
+  title      String
+  content    Json?
+  url        String   @unique
+  published  Boolean  @default(false)
+  menu       Boolean  @default(false)
+  menu_order Int      @default(autoincrement()) @unique
+  menu_name  String   @default("New Page")
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  protected  Boolean  @default(false)
+}

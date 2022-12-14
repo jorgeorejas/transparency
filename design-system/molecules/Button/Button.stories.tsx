@@ -26,4 +26,5 @@ const ButtonTemplate: ComponentStory<typeof Button> = (args) => (
 export const Default = ButtonTemplate.bind({})
 Default.args = {
   children: "Default Button",
+  negative: false,
 }

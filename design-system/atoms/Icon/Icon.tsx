@@ -14,9 +14,10 @@ export const Icon = ({
   className,
   ...props
 }: IconProps) => {
-  const Icon = isOutline
-    ? Outline[name as keyof typeof Outline]
-    : Solid[name as keyof typeof Solid]
+  const Icon =
+    isOutline === true
+      ? Outline[name as keyof typeof Outline]
+      : Solid[name as keyof typeof Solid]
   return <Icon {...props} className={className} />
 }
 

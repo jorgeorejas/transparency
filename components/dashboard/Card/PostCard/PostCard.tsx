@@ -40,7 +40,7 @@ export function PostCard({ post }: PostItemProps) {
           className="flex items-center justify-center w-full"
         />
         <PostDeleteButton
-          postId={post.id}
+          pageId={post.id}
           className="flex items-center justify-center w-full"
         />
       </div>

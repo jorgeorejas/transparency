@@ -4,13 +4,11 @@ Transparency is a boilerplate that helps you build your next SaaS product faster
 
 <img width="1200" alt="Public Transparency" src="https://user-images.githubusercontent.com/40031461/207564337-c1800939-9c4a-422c-8f8d-3203f7f758c1.png">
 
-
 ## Where can I visit it?
 
 > You can visit the Landing at [t.jorgeorejas.com](https://t.jorgeorejas.com)
 
 > You can visit the Storybook at [sb.t.jorgeorejas.com](https://sb.t.jorgeorejas.com)
-
 
 ## What is this?
 
@@ -23,9 +21,8 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
 - [x] Authentication using **NextAuth**
 - [x] Database ORM using **Prisma**
 - [ ] Owner Dashboard
+
   - [x] Blog Editor powered by **MDX** and **Editor.js**
-  - [ ] Payments and Subscriptions using **Stripe**
-  - [ ] Marketing Pages editor powered by **MDX** and **Editor.js**
   - [ ] User management and roles using **NextAuth**
   - [ ] Business Metrics built with **Tremor**
   - [ ] Self Hosted Analytics based on **Umami**
@@ -33,16 +30,22 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
   - [ ] Email implementation
   - [ ] Images and Files management
   - [ ] Open Startup Page
+  
 - [ ] Blog
+
   - [x] Blog Page
   - [ ] Blog SEO to improve search engine ranking and Inbound Marketing
+
 - [ ] Aesthetics
+
   - [ ] UI Components Library (**Radix UI** + **Tremor** )
   - [ ] Loading UI
   - [ ] Vercel OG Image for Social Media
   - [ ] Dark Mode using **TailwindCSS**
   - [ ] Responsive Design using **TailwindCSS**
+
 - [ ] Dev tools
+
   - [ ] API Routes and Middlewares
   - [ ] Docker Ready for Production
   - [ ] Testing tools

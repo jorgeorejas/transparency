@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import cn from "classnames"
 import { userAuthSchema } from "@lib/validations/auth"
 import { Icon, ToastMessage } from "@design-system/atoms"
+import { Button } from "@design-system/molecules"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -78,10 +79,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               </p>
             )}
           </div>
-          <button
-            className="inline-flex w-full items-center justify-center rounded-lg bg-[#24292F] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#24292F]/90 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50 dark:hover:bg-[#050708]/30 dark:focus:ring-slate-500"
-            disabled={isLoading}
-          >
+          <Button className="justify-center" disabled={isLoading}>
             {isLoading && (
               <Icon
                 name="ArrowPathIcon"
@@ -89,7 +87,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               />
             )}
             Sign In with Email
-          </button>
+          </Button>
         </div>
       </form>
       <div className="relative">
@@ -100,11 +98,11 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <span className="px-2 bg-white text-slate-600">Or continue with</span>
         </div>
       </div>
-      <button
-        type="button"
-        className="inline-flex w-full items-center justify-center rounded-lg border bg-white px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50 dark:hover:bg-[#050708]/30 dark:focus:ring-slate-500"
+      <Button
+        className="justify-center"
         onClick={() => signIn("github", { callbackUrl: "/" })}
         disabled={isLoading}
+        negative
       >
         <svg
           className="w-4 h-4 mr-2"
@@ -122,7 +120,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           ></path>
         </svg>
         Github
-      </button>
+      </Button>
     </div>
   )
 }
