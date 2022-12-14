@@ -30,7 +30,7 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
   - [ ] Email implementation
   - [ ] Images and Files management
   - [ ] Open Startup Page
-
+  
 - [ ] Blog
 
   - [x] Blog Page
