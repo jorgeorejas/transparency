@@ -1,19 +1,18 @@
 "use client"
 
-import * as React from "react"
+import { Icon, Text, ToastMessage } from "@design-system/atoms"
+import { Button } from "@design-system/molecules"
 import EditorJS from "@editorjs/editorjs"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { postPatchSchema } from "@lib/validations/post"
 import { posts } from "@prisma/client"
-import { useForm } from "react-hook-form"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import * as React from "react"
+import { useForm } from "react-hook-form"
 import TextareaAutosize from "react-textarea-autosize"
 import * as z from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useRouter } from "next/navigation"
-import { Text } from "@design-system/atoms"
-import { postPatchSchema } from "@lib/validations/post"
-import { ToastMessage, Icon } from "@design-system/atoms"
 import { PostPublishButton } from "../Button/Post"
-import { Card } from "@design-system/molecules"
 
 interface EditorProps {
   post: Pick<
@@ -161,10 +160,7 @@ export function Editor({ post }: EditorProps) {
               disabled={hasChanges}
               className="h-9"
             />
-            <button
-              type="submit"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md h-9 bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-            >
+            <Button type="submit">
               {isSaving && (
                 <Icon
                   name="ArrowDownTrayIcon"
@@ -172,7 +168,7 @@ export function Editor({ post }: EditorProps) {
                 />
               )}
               <span>Save</span>
-            </button>
+            </Button>
           </div>
         </div>
         <div className="prose prose-stone mx-auto w-[800px]">

@@ -8,13 +8,28 @@ export type BasicProps = {
   className?: string
   onClick?: any
   disabled?: boolean
+  negative?: boolean
+  type?: "button" | "submit" | "reset"
 }
 
-const Button = ({ children, className, disabled, ...props }: BasicProps) => {
+const Button = ({
+  children,
+  className,
+  disabled = false,
+  negative = false,
+  type,
+  ...props
+}: BasicProps) => {
   return (
     <button
       className={cn(
-        "relative inline-flex items-center h-8 px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md bg-brand-900 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-900 focus:ring-offset-2",
+        {
+          "text-brand-white bg-brand-cta hover:bg-brand-hover focus:ring-brand-cta":
+            negative === false,
+          "text-brand-cta bg-brand-pale hover:bg-brand-white focus:ring-brand-pale":
+            negative === true,
+        },
+        "inline-flex items-center h-8 px-6 py-1 text-sm font-medium  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2",
         className
       )}
       {...props}
@@ -30,6 +45,7 @@ export type ButtonLinkProps = {
   className?: string
   href: string
   target?: "_blank" | "_self" | "_parent" | "_top"
+  negative?: boolean
 }
 
 const ButtonLink = ({
@@ -37,13 +53,20 @@ const ButtonLink = ({
   className,
   href,
   target,
+  negative = false,
   ...props
 }: ButtonLinkProps) => {
   return (
     <Link
       href={href}
       className={cn(
-        "relative inline-flex items-center h-8 px-6 py-1 text-sm font-medium text-white border border-transparent rounded-md bg-brand-900 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-900 focus:ring-offset-2",
+        {
+          "text-brand-white bg-brand-cta hover:bg-brand-hover focus:ring-brand-cta":
+            negative === false,
+          "text-brand-cta bg-brand-pale hover:bg-brand-white focus:ring-brand-pale":
+            negative === true,
+        },
+        "inline-flex items-center h-8 px-6 py-1 text-sm font-medium  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2",
         className
       )}
       {...props}

@@ -26,7 +26,7 @@ const getPostsForUser = cache(async (userId: User["id"]) => {
 })
 export default async function PostsPage() {
   const user = await getCurrentUser()
-  if (!user) {
+  if (!user || user?.userType !== "OWNER") {
     redirect(authOptions.pages.signIn)
   }
   const posts = await getPostsForUser(user.id)

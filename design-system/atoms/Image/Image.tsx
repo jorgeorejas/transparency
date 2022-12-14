@@ -14,23 +14,30 @@ export type ImageProps = {
   src: string
   alt: string
   imgClassname?: string
+  rounded?: boolean
 }
 
 export default function Image({
   className,
   imgAspectRatio,
   imgClassname,
+  rounded = true,
   src,
   alt,
 }: ImageProps) {
-  const containerStyle = cn(className, "rounded-lg overflow-hidden shadow", {
-    "aspect-video": imgAspectRatio === "video",
-    "aspect-crt": imgAspectRatio === "crt",
-    "aspect-square": imgAspectRatio === "square",
-    "aspect-panoramic": imgAspectRatio === "panoramic",
-    "aspect-ultrapanoramic": imgAspectRatio === "ultraPanoramic",
-    "aspect-mac": imgAspectRatio === "mac",
-  })
+  const containerStyle = cn(
+    "overflow-hidden shadow",
+    {
+      "aspect-video": imgAspectRatio === "video",
+      "aspect-crt": imgAspectRatio === "crt",
+      "aspect-square": imgAspectRatio === "square",
+      "aspect-panoramic": imgAspectRatio === "panoramic",
+      "aspect-ultrapanoramic": imgAspectRatio === "ultraPanoramic",
+      "aspect-mac": imgAspectRatio === "mac",
+      "rounded-lg": rounded,
+    },
+    className
+  )
 
   const imgStyle = cn("object-cover h-full w-full", imgClassname)
 

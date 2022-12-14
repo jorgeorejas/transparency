@@ -8,30 +8,29 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./design-system/**/*.{js,ts,jsx,tsx}",
   ],
+  purge: {
+    enabled: process.env.NODE_ENV === "production",
+    content: [
+      "./app/**/*.{js,ts,jsx,tsx}",
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+      "./design-system/**/*.{js,ts,jsx,tsx}",
+    ],
+  },
   darkMode: "class",
   theme: {
-    container: {
-      center: true,
-      padding: "1.5rem",
-      screens: {
-        "2xl": "1440px",
-      },
-    },
     extend: {
       colors: {
         ...colors,
         brand: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
-          DEFAULT: "#0ea5e9",
+          white: "#fafafa",
+          pale: "#f1f5f9",
+          cta: "#151a26",
+          hover: "#2a324b",
+          danger: "#e94f37",
+          warning: "#ffc100",
+          succed: "#419D78",
+          DEFAULT: "#2a324b",
         },
       },
       aspectRatio: {
@@ -55,5 +54,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
+    require("@headlessui/tailwindcss"),
   ],
 }

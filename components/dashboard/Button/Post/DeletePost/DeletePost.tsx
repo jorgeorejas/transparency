@@ -8,12 +8,12 @@ import { Button } from "@design-system/molecules"
 import cn from "classnames"
 interface PostDeleteButtonProps {
   className?: string
-  postId: string
+  pageId: string
 }
 
 export function PostDeleteButton({
   className,
-  postId,
+  pageId,
   ...props
 }: PostDeleteButtonProps) {
   const router = useRouter()
@@ -22,7 +22,7 @@ export function PostDeleteButton({
   async function onClick() {
     // sends an api request to delete the post
     setIsLoading(true)
-    const response = await fetch(`/api/posts/${postId}`, {
+    const response = await fetch(`/api/posts/${pageId}`, {
       method: "DELETE",
     })
 
