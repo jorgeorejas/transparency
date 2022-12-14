@@ -2,6 +2,13 @@
 
 Transparency is a boilerplate that helps you build your next SaaS product faster than ever before.
 
+## Where can I visit it?
+
+> You can visit the Landing at [t.jorgeorejas.com](https://t.jorgeorejas.com)
+
+> You can visit the Storybook at [sb.t.jorgeorejas.com](https://sb.t.jorgeorejas.com)
+
+
 ## What is this?
 
 This is a boilerplate for a SaaS. It is a collection of tools and best practices that I have found useful in building a SaaS. Everything is open source and free to use. I hope that this will help you build your SaaS faster.
@@ -22,6 +29,7 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
   - [ ] Email Templates powered by **MDX** and **Editor.js**
   - [ ] Email implementation
   - [ ] Images and Files management
+  - [ ] Open Startup Page
 - [ ] Blog
   - [x] Blog Page
   - [ ] Blog SEO to improve search engine ranking and Inbound Marketing
@@ -37,9 +45,9 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
   - [ ] Testing tools
   - [ ] CLI for Choosing Features
 
-## How to use
+## How to use
 
-### Modify pages & Menus
+### Modify pages & Menus
 
 Some of the pages are generated from the data on the config files, also applies to the menus.
 
