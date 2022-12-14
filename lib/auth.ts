@@ -3,6 +3,7 @@ import prisma from "@lib/prismadb"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import GithubProvider from "next-auth/providers/github"
 import { NextAuthOptionsProps } from "../types/next-auth"
+import { stripe } from "@lib/stripe"
 
 export const authOptions: NextAuthOptionsProps = {
   // Configure one or more authentication providers
@@ -26,6 +27,30 @@ export const authOptions: NextAuthOptionsProps = {
       logger.debug(code, metadata)
     },
   },
+
+  events: {
+    createUser: async ({ user }) => {
+      await stripe.customers
+        .create({
+          email: user.email,
+          name: user.name,
+          metadata: {
+            userId: user.id,
+          },
+        })
+        .then(async (customer) => {
+          await prisma.user.update({
+            where: {
+              id: user.id,
+            },
+            data: {
+              stripeCustomerId: customer.id,
+            },
+          })
+        })
+    },
+  },
+
   session: {
     strategy: "database",
   },

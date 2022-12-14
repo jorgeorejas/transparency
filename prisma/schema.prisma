@@ -34,16 +34,18 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  userType      userType  @default(ADMIN)
-  Account       Account[]
-  Session       Session[]
-  posts         posts[]
+  id               String    @id @default(cuid())
+  name             String?
+  email            String?   @unique
+  emailVerified    DateTime?
+  image            String?
+  password         String?
+  userType         userType  @default(ADMIN)
+  Account          Account[]
+  Session          Session[]
+  posts            posts[]
+  stripeCustomerId String?  @unique
+  isActive         Boolean   @default(false)
 }
 
 model VerificationToken {
@@ -81,7 +83,7 @@ model marketingPages {
   url        String   @unique
   published  Boolean  @default(false)
   menu       Boolean  @default(false)
-  menu_order Int      @default(autoincrement()) @unique
+  menu_order Int      @unique @default(autoincrement())
   menu_name  String   @default("New Page")
   created_at DateTime @default(now())
   updated_at DateTime @default(now())

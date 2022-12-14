@@ -10,6 +10,10 @@ export const navigation: navigationProps = {
       name: "Dashboard",
       url: "/owner",
     },
+    {
+      name: "Pricing",
+      url: "/pricing",
+    },
   ],
 }
 

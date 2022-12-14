@@ -1,12 +1,12 @@
 export type priceFormatterProps = {
   locale: string
-  amount: number
+  value: number
   currency: string
 }
 
 export function currencyFormatter({
   locale,
-  amount,
+  value,
   currency,
 }: priceFormatterProps) {
   const formatter = new Intl.NumberFormat(locale, {
@@ -15,5 +15,5 @@ export function currencyFormatter({
     maximumFractionDigits: 2,
     minimumFractionDigits: 2,
   })
-  return formatter.format(amount / 100)
+  return formatter.format(value / 100)
 }
