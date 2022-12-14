@@ -23,6 +23,7 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
 - [ ] Owner Dashboard
 
   - [x] Blog Editor powered by **MDX** and **Editor.js**
+  - [ ] Stripe payments using **NextAuth**
   - [ ] User management and roles using **NextAuth**
   - [ ] Business Metrics built with **Tremor**
   - [ ] Self Hosted Analytics based on **Umami**
@@ -30,7 +31,7 @@ This is a boilerplate for a SaaS. It is a collection of tools and best practices
   - [ ] Email implementation
   - [ ] Images and Files management
   - [ ] Open Startup Page
-  
+
 - [ ] Blog
 
   - [x] Blog Page
