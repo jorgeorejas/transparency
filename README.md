@@ -2,6 +2,9 @@
 
 Transparency is a boilerplate that helps you build your next SaaS product faster than ever before.
 
+<img width="1200" alt="Public Transparency" src="https://user-images.githubusercontent.com/40031461/207564337-c1800939-9c4a-422c-8f8d-3203f7f758c1.png">
+
+
 ## Where can I visit it?
 
 > You can visit the Landing at [t.jorgeorejas.com](https://t.jorgeorejas.com)
