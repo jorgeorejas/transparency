@@ -2,6 +2,8 @@ import { createElement, ReactNode } from "react"
 import { useRouter } from "next/navigation"
 import cn from "classnames"
 import Link from "next/link"
+import { IconsNames } from "config/owner"
+import { Icon } from "@design-system/atoms"
 
 export type BasicProps = {
   children?: string | ReactNode
@@ -80,3 +82,42 @@ const ButtonLink = ({
 Button.Link = ButtonLink
 
 export default Button
+
+export type ButtonIconProps = {
+  icon: IconsNames
+  className?: string
+  onClick?: any
+  disabled?: boolean
+  negative?: boolean
+  type?: "button" | "submit" | "reset"
+}
+
+const ButtonIcon = ({
+  icon,
+  negative = false,
+  disabled,
+  className,
+  type,
+  ...props
+}: ButtonIconProps) => {
+  return (
+    <button
+      className={cn(
+        {
+          "text-brand-white bg-brand-cta hover:bg-brand-hover focus:ring-brand-cta":
+            negative === false,
+          "text-brand-cta bg-brand-pale hover:bg-brand-white focus:ring-brand-pale":
+            negative === true,
+        },
+        "inline-flex items-center h-8 p-1 text-sm font-medium  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2",
+        className
+      )}
+      {...props}
+      disabled={disabled}
+    >
+      <Icon name={icon} className="h-6" />
+    </button>
+  )
+}
+
+Button.Icon = ButtonIcon

@@ -9,8 +9,6 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "contentlayer": "contentlayer dev",
-    "contentlayer:build": "contentlayer build",
     "stripe-webhook": "stripe listen --load-from-webhooks-api --forward-to localhost:3000"
   },
   "prisma": {

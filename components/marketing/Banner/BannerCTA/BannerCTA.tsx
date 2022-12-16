@@ -57,7 +57,7 @@ export default function BannerCTA({
 
   function BannerText() {
     return (
-      <div className="flex flex-col w-4/5 gap-4">
+      <div className="flex flex-col gap-4 md:w-4/5">
         <Text.Header htmlTag="h2" className="w-full text-justify shrink-0">
           {title}
         </Text.Header>

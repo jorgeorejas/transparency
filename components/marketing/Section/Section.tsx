@@ -16,15 +16,16 @@ function Section({
   ...props
 }: SectionProps) {
   const style = cn(
-    "max-w-[90vw] mx-auto mt-4",
+    "max-w-[90vw] mx-auto mt-4 gap-4",
     {
-      "flex flex-col gap-4": type === "default",
-      "grid grid-cols-2 gap-4 items-center justify-center":
-        type === "grid-cols-2",
-      "grid grid-cols-3 gap-4 items-center justify-center":
-        type === "grid-cols-3",
-      "grid grid-cols-4 gap-4 items-center justify-center":
+      "flex flex-col ": type === "default",
+      "items-center justify-center":
+        type === "grid-cols-2" ||
+        type === "grid-cols-3" ||
         type === "grid-cols-4",
+      "md:grid flex flex-col md:grid-cols-2": type === "grid-cols-2",
+      "md:grid flex flex-col md:grid-cols-3": type === "grid-cols-3",
+      "md:grid flex flex-col md:grid-cols-4": type === "grid-cols-4",
     },
     className
   )
