@@ -24,6 +24,7 @@
       "@hooks/*": ["hooks/*"],
       "@lib/*": ["lib/*"],
       "@types/*": ["types/*"],
+      "@app/*": ["app/*"],
       "@pages/*": ["pages/*"],
       "@assets/*": ["assets/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]

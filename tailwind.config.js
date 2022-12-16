@@ -15,8 +15,8 @@ module.exports = {
       colors: {
         ...colors,
         brand: {
-          white: "#fafafa",
-          pale: "#f1f5f9",
+          white: "#ffffff",
+          pale: "#fafafa",
           cta: "#151a26",
           hover: "#2a324b",
           danger: "#e94f37",

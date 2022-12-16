@@ -12,6 +12,8 @@ const user: User = {
   id: "",
   password: "",
   emailVerified: undefined,
+  stripeCustomerId: "",
+  isActive: false,
 }
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

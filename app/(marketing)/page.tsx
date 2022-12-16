@@ -1,6 +1,12 @@
-import { Banner } from "@components/marketing"
+import { Banner, PriceCard, Section } from "@components/marketing"
+import { getCurrentUser } from "@lib/session"
+import stripeInteractor from "@utils/stripeInteractor"
 import { landingHero } from "config/marketing"
-export default function MyPage() {
+
+export default async function MyPage() {
+  const stripe = new stripeInteractor()
+  const products = await stripe.getProducts()
+  const user = getCurrentUser()
   return (
     <>
       <Banner.BannerCTA
@@ -11,6 +17,12 @@ export default function MyPage() {
         ctaDestination={landingHero.ctaDestination}
         className="md:min-h-80"
       />
+      <Section.Info header="Our pricing" type="grid-cols-4" className="w-full">
+        {products &&
+          products.map((product) => (
+            <PriceCard key={product.id} product={product} user={user} />
+          ))}
+      </Section.Info>
     </>
   )
 }

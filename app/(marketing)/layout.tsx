@@ -13,7 +13,7 @@ export default async function MarketingLayout({
   // on page load
   const user = await getCurrentUser()
   return (
-    <>
+    <div className="pb-12">
       <Header user={user} sticky={true}>
         {navigation.items.map((item) => (
           <Link key={item.name} href={item.url}>
@@ -22,6 +22,6 @@ export default async function MarketingLayout({
         ))}
       </Header>
       {children}
-    </>
+    </div>
   )
 }
