@@ -17,17 +17,17 @@ export type HeaderProps = {
 
 const Header = ({ className, user, children, sticky = false }: HeaderProps) => {
   const style = cn(
-    "bg-brand-white max-w-[90vw] h-16 mx-auto",
-    "top-0 z-50 py-2 px-2",
-    "flex justify-between gap-4 items-center ",
+    "bg-brand-white ",
+    "top-0 z-50",
+    " ",
     {
       sticky: sticky,
     },
     className
   )
   return (
-    <div className="relative bg-brand-white">
-      <div className={style}>
+    <div className={style}>
+      <div className="max-w-[90vw] mx-auto flex justify-between gap-4 py-2 px-2 h-16 items-center">
         <div className="flex items-center justify-center gap-4">
           <Logo.Isotype isLink size="sm" flow="row" />
         </div>

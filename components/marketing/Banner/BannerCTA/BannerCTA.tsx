@@ -33,7 +33,6 @@ export default function BannerCTA({
           <BannerText />
         </Section>
       )
-      break
     }
     case false:
       return (
@@ -66,9 +65,12 @@ export default function BannerCTA({
             {text}
           </Text>
         ))}
-        <Button onClick={() => redirect(ctaDestination)} className="mr-auto ">
+        <Button.Link
+          href={ctaDestination}
+          className="mr-auto hover:cursor-pointer"
+        >
           {cta}
-        </Button>
+        </Button.Link>
       </div>
     )
   }

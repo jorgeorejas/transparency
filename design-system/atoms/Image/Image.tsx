@@ -13,14 +13,12 @@ export type ImageProps = {
     | "ultraPanoramic"
   src: string
   alt: string
-  imgClassname?: string
   rounded?: boolean
 }
 
 export default function Image({
   className,
   imgAspectRatio,
-  imgClassname,
   rounded = true,
   src,
   alt,
@@ -39,11 +37,9 @@ export default function Image({
     className
   )
 
-  const imgStyle = cn("object-cover h-full w-full", imgClassname)
-
   return (
     <div className={containerStyle}>
-      <img src={src} className={imgStyle} alt={alt} />
+      <img src={src} className="object-cover w-full h-full" alt={alt} />
     </div>
   )
 }

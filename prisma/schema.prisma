@@ -64,7 +64,7 @@ model posts {
   created_at  DateTime @default(now())
   updated_at  DateTime @default(now())
   authorId    String
-  description String?
+  description String?  @default("")
   slug        String   @unique @default(cuid())
   image       String   @default("https://picsum.photos/seed/hr/1800/600")
   user        User     @relation(fields: [authorId], references: [id])

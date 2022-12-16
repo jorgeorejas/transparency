@@ -1,5 +1,4 @@
 import { BannerCTAProps } from "./../components/marketing/Banner/BannerCTA/BannerCTA"
-import { HeaderProps } from "@components/marketing/Header/Header"
 export const navigation: navigationProps = {
   items: [
     {
@@ -7,12 +6,12 @@ export const navigation: navigationProps = {
       url: "/",
     },
     {
-      name: "Dashboard",
-      url: "/owner",
-    },
-    {
       name: "Pricing",
       url: "/pricing",
+    },
+    {
+      name: "Blog",
+      url: "/blog",
     },
   ],
 }
@@ -29,8 +28,8 @@ export const landingHero: BannerCTAProps = {
     src: "https://picsum.photos/seed/hr/1920/1080",
     imgAspectRatio: "mac",
   },
-  cta: "Show me more",
-  ctaDestination: "/",
+  cta: "Future Features",
+  ctaDestination: "/blog/future-features",
 }
 
 export type navigationProps = {
