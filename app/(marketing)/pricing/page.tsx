@@ -10,7 +10,7 @@ export default async function Pricing() {
   return (
     <Section.Info header="Our pricing" type="grid-cols-4" className="w-full">
       {products.map((product) => (
-        <PriceCard key={product.id} product={product} user={user} />
+        <PriceCard key={product.id} product={product} />
       ))}
     </Section.Info>
   )

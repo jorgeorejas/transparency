@@ -44,7 +44,7 @@ model User {
   Account          Account[]
   Session          Session[]
   posts            posts[]
-  stripeCustomerId String?  @unique
+  stripeCustomerId String?   @unique
   isActive         Boolean   @default(false)
 }
 

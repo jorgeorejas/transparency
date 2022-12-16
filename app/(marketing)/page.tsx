@@ -20,7 +20,7 @@ export default async function MyPage() {
       <Section.Info header="Our pricing" type="grid-cols-4" className="w-full">
         {products &&
           products.map((product) => (
-            <PriceCard key={product.id} product={product} user={user} />
+            <PriceCard key={product.id} product={product} />
           ))}
       </Section.Info>
     </>

@@ -9,7 +9,12 @@ export default async function handler(
 ) {
   const { priceId } = req.body
   const session = await unstable_getServerSession(req, res, authOptions)
-
+  if (!session) {
+    return res.status(401).json({
+      error: "Not authenticated",
+      redirectUrl: "/login",
+    })
+  }
   const { stripeCustomerId } = session.user
 
   const checkoutSession = await stripe.checkout.sessions.create({

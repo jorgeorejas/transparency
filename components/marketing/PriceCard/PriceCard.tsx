@@ -3,21 +3,14 @@
 import { Icon, Text } from "@design-system/atoms"
 import { Button, Card } from "@design-system/molecules"
 import { currencyFormatter } from "@utils/formatters"
-import { StripeProduct } from "@utils/stripeInteractor"
 import { pricingFeatures } from "config/pricing"
 
-import { signIn } from "next-auth/react"
-
-function PriceCard({ product, user }) {
+function PriceCard({ product }) {
   // select the pricing features that are available for this product by id
   const tier = pricingFeatures.filter((feature) =>
     feature.id.includes(product.id)
   )
   const goToCheckout = async () => {
-    if (!user) {
-      return signIn()
-    }
-
     const res = await fetch(`/api/stripe/create-checkout-session`, {
       method: "POST",
       headers: {

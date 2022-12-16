@@ -43,7 +43,7 @@ export const navigation: navigationProps = {
       type: "link",
       name: "Users",
       url: "/owner/users",
-      disabled: true,
+      disabled: false,
       icon: "UserGroupIcon",
     },
     {
